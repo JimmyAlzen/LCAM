@@ -1,5 +1,6 @@
 #ifndef __SDCARD_H__
 #define __SDCARD_H__
+#include <SD.h>
 
 //////////////////////////////////////////////////////////////////////////////////
 // All SD card disk operations
@@ -31,15 +32,22 @@ typedef struct GAINCAL2 {
   short gain[7][1536];
 } GAINCAL2;
 
+typedef struct NETWORK {
+  char ssid[32];
+  char password[32];
+} NETWORK;
+
 #define LCAM_GAIN_BASIS  16384
 #define LCAM_GAIN_BITS   14
 
 extern SETTINGS gSettings;
 extern DARKFRAME2 gDarkframe;
 extern GAINCAL2 gGaincal;
+extern NETWORK gNetwork;
 extern File gFile;
 
 boolean sdReadSettings();
+boolean sdReadNetwork();
 void sdWriteSettings();
 void sdZeroSettings();
 void sdCreateImage();
@@ -49,6 +57,7 @@ void sdWriteDarkframe();
 boolean sdReadDarkframe();
 void sdWriteGaincal();
 boolean sdReadGaincal();
+boolean sdReadNetwork( char *network, char *password );
 
 #endif //__SDCARD_H__
 

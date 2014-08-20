@@ -30,6 +30,11 @@
 //
 //  42   OUT   CCD SI
 //
+//  45   OUT   WIFI CS
+//  47   IN    WIFI IRQ
+//  49   OUT   WIFI Enable
+//
+
 //  PWM Pins --------------------
 //
 //  6    OUT   CCD CLK
@@ -64,6 +69,10 @@
 #define CCD_SI     42
 #define CCD_CLK    6    // PWM channel
 #define CCD_A      0    // A/D Channel
+
+#define WIFI_EN    49
+#define WIFI_IRQ   47
+#define WIFI_CS    45
 
 #define  B1        44
 #define  B2        46
